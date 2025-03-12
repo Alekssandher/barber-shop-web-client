@@ -1,34 +1,27 @@
-export interface ScheduleAppointmentResponse {
+export interface ScheduleAppointmentMonthResponse {
     year: number,
-    month: number,
-    scheduleAppointments: ClientScheduleAppointmentResponse[]
+    month: number
+    scheduledAppointments: ClientScheduleAppointementResponse[]
 }
 
-export interface ClientScheduleAppointmentResponse {
-    id: number,
-    day: number,
-    startAt: Date,
-    endAt: Date,
-    clientId: number,
+export interface ClientScheduleAppointementResponse {
+    id: number
+    day: number
+    startAt: Date
+    endAt: Date
+    clientId: number
     clientName: string
 }
 
-export interface ClientScheduleAppointmentDetailResponse {
-    id: number,
-    name: string,
-    email: string,
-    phone: string
-}
-
 export interface SaveScheduleResponse {
-    id: number,
-    startAt: Date,
-    endAt: Date,
+    id: number
+    startAt: Date
+    endAt: Date
     clientId: number
 }
 
-export interface SaveScheduleRequest{
-    startAt: Date,
-    endAt: Date,
+export interface SaveScheduleRequest {
+    startAt: Date
+    endAt: Date
     clientId: number
 }

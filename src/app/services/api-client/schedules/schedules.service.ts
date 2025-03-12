@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IScheduleService } from './ischedules.service';
 import { Observable } from 'rxjs';
-import { SaveScheduleRequest, SaveScheduleResponse, ScheduleAppointmentResponse } from './schedule.models';
+import { SaveScheduleRequest, SaveScheduleResponse, ScheduleAppointmentMonthResponse } from './schedule.models';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environment/environment';
 
@@ -20,7 +20,7 @@ export class SchedulesService implements IScheduleService{
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.basePath}schedules/${id}`)
   }
-  listInMonth(year: number, month: number): Observable<ScheduleAppointmentResponse> {
-    return this.http.get<ScheduleAppointmentResponse>(`${this.basePath}schedules/${year}/${month}`)
+  listInMonth(year: number, month: number): Observable<ScheduleAppointmentMonthResponse> {
+    return this.http.get<ScheduleAppointmentMonthResponse>(`${this.basePath}schedules/${year}/${month}`)
   }
 }

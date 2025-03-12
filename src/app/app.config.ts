@@ -5,6 +5,7 @@ import { provideNgxMask } from 'ngx-mask';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi()),
-    provideNgxMask({})
+    provideNgxMask({}),
+    provideNativeDateAdapter()
   ]
 };
