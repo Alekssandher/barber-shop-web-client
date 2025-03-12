@@ -1,0 +1,16 @@
+.title-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mat-mdc-card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-title {
+    padding: 2rem 0px 3rem 0px;
+    margin: 0px 0px 3rem 0px;
+}
