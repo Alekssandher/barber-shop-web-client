@@ -52,7 +52,7 @@ export class ScheduleCalendarComponent implements AfterViewInit, OnChanges, OnDe
 
   clientSelectFormControl = new FormControl()
 
-  @Input() monthSchedule!: ScheduleAppointementMonthModel
+  @Input() monthSchedule: ScheduleAppointementMonthModel = { year: 0, month: 0, scheduledAppointments: [] };
   @Input() clients: SelectClientModel[] = []
 
   @Output() onDateChange = new EventEmitter<Date>()
@@ -88,8 +88,11 @@ export class ScheduleCalendarComponent implements AfterViewInit, OnChanges, OnDe
     }
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['monthSchedule'] && this.monthSchedule) {
-      this.buildTable()
+    if (changes['monthSchedule']) {
+      console.log('monthSchedule mudou:', this.monthSchedule);
+      if (this.monthSchedule && this.monthSchedule.scheduledAppointments) {
+        this.buildTable();
+      }
     }
   }
 

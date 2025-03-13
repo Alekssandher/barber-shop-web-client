@@ -9,7 +9,7 @@
                             <mat-label>Inicio</mat-label>
                             <input matInput [matTimepicker]="startAtPicker" [ngModelOptions]="{updateOn: 'blur'}"
                                 name="startAt" id="startAt" #startAtModel="ngModel"
-                                (ngModelChange)="onTimeChange($event)" [(ngModel)]="newSchedule.startAt" requied>
+                                (ngModelChange)="onTimeChange($event)" [(ngModel)]="newSchedule.startAt" required>
                             <mat-timepicker #startAtPicker />
                             <mat-timepicker-toggle [for]="startAtPicker" matSuffix />
                         </mat-form-field>
