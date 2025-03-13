@@ -1,59 +1,115 @@
-# BarberShopWebClient
+# Appointment Scheduling System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+A comprehensive client management and appointment scheduling application built with Angular and Spring Boot.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+This application provides a user-friendly interface for managing client information and scheduling appointments. The system features:
 
-```bash
-ng serve
-```
+- Client management (registration, listing, and editing)
+- Calendar-based appointment scheduling
+- Time selection for appointments
+- Client-appointment association
+- Monthly calendar view
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tech Stack
 
-## Code scaffolding
+### Frontend
+- Angular
+- Angular Material UI components
+- RxJS for reactive programming
+- DI token pattern for service management
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Backend
+- Spring Boot
+- RESTful API structure
+- Gradle build system
 
-```bash
-ng generate component component-name
-```
+## Project Structure
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The application follows a modular architecture:
 
-```bash
-ng generate --help
-```
+- **Commons Components**: Reusable UI elements like card headers, menu bars, and dialog boxes
+- **Services**: API clients, dialog managers, and notification services
+- **Scheduling Module**: Calendar components and scheduling interfaces
+- **Client Module**: Client management components
 
-## Building
+## Setup Instructions
 
-To build the project run:
+### Prerequisites
+- Node.js (v16+)
+- Angular CLI
+- Java JDK 17+
+- Git
 
-```bash
-ng build
-```
+### Installation
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. Clone the main repository:
+   ```
+   git clone https://github.com/your-username/appointment-scheduler.git
+   cd appointment-scheduler
+   ```
 
-## Running unit tests
+2. Install the backend submodule:
+   ```
+   git submodule init
+   git submodule update
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+3. Install frontend dependencies:
+   ```
+   npm install
+   ```
 
-```bash
-ng test
-```
+### Running the Application
 
-## Running end-to-end tests
+1. Start the backend server:
+   ```
+   cd backend
+   ./gradlew bootRun
+   ```
+   The API will be available at http://localhost:8080/
 
-For end-to-end (e2e) testing, run:
+2. In a separate terminal, start the frontend application:
+   ```
+   ng serve
+   ```
+   The application will be available at http://localhost:4200/
 
-```bash
-ng e2e
-```
+### Backend Configuration
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+For detailed instructions on how to configure the backend, please refer to:
+https://github.com/Alekssandher/barber-shop-api
 
-## Additional Resources
+## Key Features
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Client Management
+- Add new clients with name, email, and phone
+- View list of all clients
+- Update existing client information
+- Delete clients
+
+### Scheduling
+- Interactive calendar interface
+- Time picker for appointment start/end times
+- Client selection for appointments
+- Daily appointment listing
+- Delete appointments with confirmation dialog
+
+## API Integration
+
+The application communicates with the backend through RESTful API endpoints:
+
+- `/clients` - Client management endpoints
+- `/schedule` - Appointment scheduling endpoints
+
+## Development Notes
+
+- The application uses Angular Material for UI components
+- Service interfaces are provided through DI tokens
+- Reactive forms and template-driven forms are used
+- Dialog and snackbar managers provide user notifications
+- Environment configuration for API URLs
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
